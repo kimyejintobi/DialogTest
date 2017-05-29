@@ -23,13 +23,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         dialog.setTitle("Lunatic-Hai");
         dialog.setIcon(R.mipmap.tobi); //mipmap은 사진을 아이콘을 만들어준다.
        // dialog.setMessage("이 곳에 메세지를 입력하세요!");
-        dialog.setItems(itemArr, new DialogInterface.OnClickListener() {
+        /*dialog.setItems(itemArr, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int i) {
                 butDialog.setText(itemArr[i]);
 
             }
-        });
+        });*/
+
+        dialog.setSingleChoiceItems(itemArr, 0,new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int i) {
+                        butDialog.setText(itemArr[i]);
+
+                    }
+                });
+
+        //라디오 버튼 목록
         dialog.setPositiveButton("OK",null);
         dialog.show();
     }
